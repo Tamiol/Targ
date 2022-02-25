@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Targowisko</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+<header th:insert="_layout :: layout"></header>
+
+<section id="addSection" >
+    <div class="resContainer">
+        <div class="option1">
+            <form method="GET" th:action="@{/addStall}" >
+                <input type="submit" value="Stall" />
+            </form>
+        </div>
+        <div class="option2">
+            <form class="GET" method="GET" th:action="@{/addFruit}" > <!--listOFStalls.get(0).addProduct(new itp)-->
+                <input type="submit" value="Fruit" />
+            </form>
+        </div>
+        <div class="option3">
+            <form class="GET" method="GET" th:action="@{/addMeat}" >
+                <input type="submit" value="Meat" />
+            </form>
+        </div>
+        <div class="option4">
+            <form class="GET" method="GET" th:action="@{/addFlower}" >
+                <input type="submit" value="Flower" />
+            </form>
+        </div>
+        <div class="option5">
+            <form class="GET" method="GET" th:action="@{/addBouquetOfFlowers}" >
+                <input type="submit" value="BouquetOfFlowers" />
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

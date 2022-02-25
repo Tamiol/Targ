@@ -1,0 +1,585 @@
+@charset "UTF-8";
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		transform: translateX(-300px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+
+}
+@keyframes navLinkFade {
+
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: #FFF;
+	font-size: 18px;
+	line-height: 1.5;
+	height: 100%;
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+}
+
+.resContainer {
+	width: 60%;
+	margin: auto;
+}
+/*47644f*/
+header {
+	color: #F4EEED;
+	background: #688F4E;
+	/*border-bottom: 5px solid #999B84;*/
+	-moz-box-shadow: 0px 5px 5px #888;
+	-webkit-box-shadow: 0px 0 0 #888;
+	box-shadow: 0px 4px 5px #888;
+}
+
+header ul li{
+	float: left;
+	display: inline;
+	padding: 20px 30px;
+	font-size: 20px;
+}
+
+#logo{
+	font-size: 30px;
+	float: right;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#logo h1::first-letter {
+	color: #99AAEA;
+}
+
+header nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 90px;
+}
+
+header ul li a {
+	text-decoration: none;
+	color: #FFFFFF;
+	display: block;
+	padding: 10px 20px;
+	letter-spacing: 1px;
+	background-color: transparent;
+	border: 2px solid transparent;
+	border-radius: 5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color, color;
+	transition-duration: 0.5s;
+}
+
+ul li a:hover {
+	background-color: #99AAEA;
+	border: 2px solid #99AAEA;
+	color: #fff;
+	cursor: pointer;
+}
+
+#addSection {
+	margin-top: 25px;
+	position: relative;
+	text-align: center;
+	display: table;
+	min-height: calc(100vh - 110px - 110px);
+	width: 100%;
+}
+
+#addSection form {
+	/*display: flex;
+	justify-content: center;*/
+	padding: 20px;
+}
+
+#addSection input {
+	width: 100%;
+	padding: 15px;
+	font-size: 100%;
+	letter-spacing: 1px;
+	border-radius: 25px;
+	transition: background-color, color, border-color;
+	transition-duration: 1s;
+	cursor: pointer;
+	
+	background-color: #FFF;
+	color: #47644f;
+	border: 2px solid #5f9b4f;
+}
+
+#addSection input:hover {
+	background-color: #47644f;
+	color: #FFF;
+	border-color: #47644f;
+}
+
+.option1 {
+	animation: appear 0.8s 0s both;
+}
+.option2 {
+	animation: appear 0.8s 0.1s both;
+}
+.option3 {
+	animation: appear 0.8s 0.2s both;
+}
+.option4 {
+	animation: appear 0.8s 0.3s both;
+}
+.option5 {
+	animation: appear 0.8s 0.4s both;
+}
+.option6 {
+	animation: appear 0.8s 1.2s both;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+.box-container {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+    justify-content: space-around;
+}
+
+/* courses section -----------------------------------*/
+.navigationHeader {
+	position: relative;
+}
+.navigationHeader p{
+	display: flex;
+	justify-content: center;
+}
+#returnToCourse {
+	left: 10%;
+	margin-top: 10px;
+	position: absolute;
+	font-size: 25px;
+	font-family: 'Lato', Arial, sans-serif;
+	letter-spacing: 1px;
+	padding: 5px 13px;
+	border: #232323 2px solid;
+	border-radius: 40%;
+	cursor: pointer;
+}
+
+#boxes {
+	max-height: 100%;
+	width: 80%;
+	margin: 40px auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	min-height: calc(100vh - 110px - 130px - 40px);
+}
+
+#boxes .box {
+	text-align: center;
+	width: 30%;
+}
+.box img {
+	width: 200px;
+	height: 200px;
+	background-color: transparent;
+	text-align: center;
+}
+
+.box a {
+	width: 100%;
+	max-height: 100%;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+}
+.box p {
+	color: black;
+	font-family: 'Lato', Arial, sans-serif;
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+.box {
+	text-align: center;
+	text-decoration: none;
+}
+
+/* pola z wyborem lekcji T72-M1----------------------------------------*/
+.lessons {
+	text-align: center;
+	display: table;
+	min-height: calc(100vh - 110px - 110px);
+	width: 100%;
+}
+
+.lessons p {
+	text-align: center;
+	font-size: 25px;
+	font-family: 'Lato', Arial, sans-serif;
+	letter-spacing: 1px;
+	margin-block-end: 0px;
+	padding-top: 10px;
+}
+
+.lessons p a {
+	font-size: 25px;
+	font-family: 'Lato', Arial, sans-serif;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: black;
+}
+
+.lesson1 {
+	animation: appear 0.8s 0.2s both;
+}
+.lesson2 {
+	animation: appear 0.8s 0.4s both;
+}
+.lesson3 {
+	animation: appear 0.8s 0.6s both;
+}
+.lesson4 {
+	animation: appear 0.8s 0.8s both;
+}
+.lesson5 {
+	animation: appear 0.8s 1.0s both;
+}
+.lesson6 {
+	animation: appear 0.8s 1.2s both;
+}
+.lesson7 {
+	animation: appear 0.8s 1.4s both;
+}
+
+.lessons form {
+	padding: 20px;
+}
+
+.lessons input {
+	width: 100%;
+	padding: 15px;
+	font-size: 100%;
+	letter-spacing: 1px;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 25px;
+	transition: background-color, color, border-color;
+	transition-duration: 1s;
+}
+.lessons input:active, .lessons input:focus {
+	-moz-outline: none;
+	outline: none; /* CSS 3 */
+}
+/* footer -----------------------------------------------------*/
+footer {
+	display: flex;
+	margin-top: 20px;
+	background-color: #002940;
+	color: #abb2b9;
+	height: 90px;
+}
+/* burger ---------------------------------------------------------------------*/
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger div {
+	width: 30px;
+	height: 3px;
+	background-color: #FFF;
+	margin: 7px;
+	transition: all 0.3s ease;
+}
+/* media 1100px -------------------------------------------------*/
+@media screen and (max-width: 1100px) {
+	#boxes .box {
+		width: 50%;
+	}
+
+	.resContainer {
+		width: 80%;
+	}
+}
+
+/* media 768px -------------------------------------------------*/
+@media screen and (max-width: 768px) {
+
+	.resContainer {
+		width: 90%;
+	}
+
+	/* burger-------------------------------------------*/
+	body{
+		overflow-x: hidden;
+	}
+
+	.nav-links {
+		position: absolute;
+		z-index: 1;
+		right: 0px;
+		height: 400px;
+		top: 80px;
+		background-color: #ce6026;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+
+	.nav-links li {
+		margin: 20px 0px 50px 0px;
+		opacity: 0;
+	}
+
+	.nav-links a {
+		font-size: 25px;
+	}
+
+	.burger {
+		display: block;
+	}
+
+	/* home page -----------------------------------------------------*/
+	ul li a {
+		border: 3px solid transparent;
+		padding: 10px 15px;
+	}
+	
+	ul li a:hover {
+		color: #2c3e50;
+		text-shadow: 0px 0px 2px #232323;
+		border-radius: 20px;
+	}
+
+	/* courses section--------------------------------------------------- */
+	#boxes .box {
+		width: 100%;
+	}
+	#boxes {
+		width: 100%;
+		margin: 0
+	}
+	.box a{
+		padding: 0;
+	}
+}
+
+/* burger animations (do not move) ---------------------------------------------*/
+.nav-active {
+	transform: translateX(0%);
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-6px,8px);
+}
+.toggle .line2 {
+	opacity: 0;
+}
+.toggle .line3 {
+	transform: rotate(45deg) translate(-6px,-8px);
+}
+
+button:active, button:focus, a:active, a:focus {
+	-moz-outline: none;
+	outline: none; /* CSS 3 */
+}
+
+.notAllowed{
+	cursor: not-allowed;
+}
+
+/* TABLE ------------------------------------------------------------------------------------------*/
+#allSection table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#allSection td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+#allSection tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+#allSection table > *:first-child:not(thead) td:first-child {
+	font-weight: bold;
+}
+
+#leftPanelTable{
+	display: flex;
+}
+
+/*//////////////////////*/
+
+.deleteButton {
+	padding: 5px 10px;
+	background-color: #8E1600;
+	color: #fff;
+	border: 1px solid #8E1600;
+	font-size: 16px;
+	border-radius: 10px;
+	transition: background-color, border-color;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+
+.deleteButton:hover {
+	background-color: #B53737;
+	border: 1px solid #B53737;
+}
+
+#allSection form {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#inputSection {
+	margin-top: 50px;
+	display: flex;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#inputSection h1{
+	text-align: center;
+}
+
+#inputSection th{
+	text-align: center;
+}
+
+#inputSection input {
+	border: 2px solid #5f9b4f;
+	border-radius: 25px;
+	padding: 10px 15px;
+	margin: 10px;
+}
+/*D0E1F0*/
+#inputSection select {
+	border: 2px solid #5f9b4f;
+	border-radius: 10px;
+	padding: 10px 15px;
+	background: #DCE5E3;
+	margin: 10px;
+}
+
+#inputSection button {
+	margin: 20px 0;
+	background-color: #8fc866;
+	color: #fff;
+	width: 70%;
+	padding: 20px 10px;
+	font-size: 20px;
+	border-radius: 30px;
+	cursor: pointer;
+	border: 1px solid #8fc866;
+	letter-spacing: 1px;
+	transition: background-color, border-color, letter-spacing;
+	transition-duration: 0.3s;
+}
+
+#inputSection button:hover {
+	background-color: #44c767;
+	border-color: #44c767;
+	letter-spacing: 3px;
+}
+
+#box {
+	text-align: center;
+}
+#inputSection table {
+	width: 70%;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+#box th{
+	/*text-align: left;*/
+	border: 1px solid transparent;
+	border-bottom: 1px solid #ddd;
+}
+
+#box td {
+	/*text-align: left;*/
+}
+
+.dropbtn {
+	background-color: #99AAEA;
+	border: 1px solid #99AAEA;
+	padding: 10px 20px;
+	letter-spacing: 1px;
+	font-size: 20px;
+	width: 100px;
+	border-radius: 5rem;
+	color: white;
+	cursor: pointer;
+}
+
+.dropdown {
+	margin: 20px;
+	position: relative;
+	display: inline;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content button {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	letter-spacing: 1px;
+	cursor: pointer;
+	font-size: 20px;
+	border: 0;
+	text-align: left;
+	width: 100%;
+
+	background: #ffffff;
+}
+
+.dropdown-content button:hover {background-color: #f1f1f1;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #647DB1; border-color: #647DB1}
+
+
+

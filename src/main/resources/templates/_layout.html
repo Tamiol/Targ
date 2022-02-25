@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Targowisko</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--    <script type="text/javascript">-->
+<!--        $(function(){-->
+<!--            $("#serachTerm").autocomplete({-->
+<!--                source: "nameAutocomplete",-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+</head>
+
+<body>
+<div th:fragment="layout">
+        <nav class="container">
+            <div id="logo">
+                <a th:href="@{/}"><h1>Targ</h1></a>
+            </div>
+            <ul class="nav-links">
+                <!--<li><a th:href="@{/}">GetAll</a></li>-->
+                <li><a th:href="@{/getById}">GetById</a></li>
+                <li><a th:href="@{/add}">Add</a></li>
+                <li><a th:href="@{/delete}">Delete</a></li>
+            </ul>
+            <form action="#" th:action="@{/findByName}" method="GET">
+                <input type="search" placecholder="Search" aria-label="Search" name="searchTerm" id="serachTerm" list="Product_search"/>
+                <datalist id="Product_search">
+                    <option value="Fruit"></option>
+                    <option value="Meat"></option>u90-/
+                    <option value="Stall"></option>
+                </datalist>
+                <button type="submit">Search</button>
+            </form>
+
+<!--            <div class="burger">-->
+<!--                <div class="line1"></div>-->
+<!--                <div class="line2"></div>-->
+<!--                <div class="line3"></div>-->
+<!--            </div>-->
+        </nav>
+</div>
+</body>
+</html>

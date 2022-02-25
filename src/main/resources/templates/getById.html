@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Targowisko</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+<header th:insert="_layout :: layout"></header>
+<section id="inputSection">
+    <div class="resContainer">
+        <h1>Get product / stall</h1>
+        <div id="box">
+            <form th:action="@{/getById}" method="post">
+                <table>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>ID</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select th:name="type">
+                                <option th:value="STALL">STALL</option>
+                                <option th:value="PRODUCT">PRODUCT</option>
+                            </select>
+                        </td>
+                        <td><input placeholder="0000" th:name="id"/></td>
+                    </tr>
+                </table>
+                <button type="submit">Zatwierdź</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+</body>
+</html>

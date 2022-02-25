@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Targowisko</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+<header th:insert="_layout :: layout"></header>
+
+<section id="inputSection">
+    <div class="container">
+        <h1>Add Fruit</h1>
+        <div id="box">
+            <form action="#" th:action="@{/addFruit}" th:object="${fruit}"
+                  method="POST">
+                <table>
+                    <tr>
+                        <th>STALL ID</th>
+                        <th>name</th>
+                        <th>price</th>
+                        <th>color</th>
+                        <th>amount</th>
+                        <th>size</th>
+                    </tr>
+                    <tr>
+                        <td><select th:name="id">
+                            <option th:each="id : ${ids}"
+                                    th:value="${id}"
+                                    th:text="${id}"
+                            ></option>
+                        </select></td>
+
+                        <td><input type="text" th:field="*{name}"
+                                   placeholder="name"></td>
+
+                        <td><input type="text" th:field="*{price}"
+                                   placeholder="price"></td>
+
+                        <td><select th:field="*{color}">
+                            <option th:each="color : ${colors}"
+                                    th:value="${color}"
+                                    th:text="${color.displayName}"
+                            ></option>
+                        </select></td>
+
+                        <td><input type="text" th:field="*{amount}"
+                                   placeholder="amount"></td>
+
+                        <td><select th:field="*{size}">
+                            <option th:each="size : ${sizes}"
+                                    th:value="${size}"
+                                    th:text="${size.displayName}"
+                            ></option>
+                        </select></td>
+                    </tr>
+                </table>
+                <button type="submit">Save Fruit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!--<script>
+    function setInputFilter(textbox, inputFilter) {
+        ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+            textbox.addEventListener(event, function() {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                } else {
+                    this.value = "";
+                }
+                currentElement = parseInt(this.value);
+                setLight(currentElement);
+            });
+        });
+    }
+    setInputFilter(document.getElementById("intTextBox"), function(value) {
+        return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 9); });
+</script>-->
+</body>
+
+</html>

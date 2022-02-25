@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Targowisko</title>
+  <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+<header th:insert="_layout :: layout"></header>
+<section id="allSection" class="resContainer">
+  <h1>Product list</h1>
+
+  <table th:each="prod : ${list}">
+    <tr>
+      <th>ID</th>
+      <th>nazwa</th>
+      <th>cena</th>
+<!--      //fruit-->
+      <th th:if="${prod instanceof T(com.example.projekt.model.Fruit)}">kolor</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Fruit)}">ilość</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Fruit)}">wielkość owocu</th>
+<!--      // meat-->
+      <th th:if="${prod instanceof T(com.example.projekt.model.Meat)}">weight</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Meat)}">isLegal</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Meat)}">isFresh</th>
+<!--      // flower-->
+      <th th:if="${prod instanceof T(com.example.projekt.model.Flower)}">flowerColor</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Flower)}">avrageLength</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.Flower)}">isLegal</th>
+<!--      // bouquetOfFlowers-->
+      <th th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}">flowerColor</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}">amountOfBouquets</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}">isGreenery</th>
+      <th th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}">isRibbon</th>
+    </tr>
+    <tr >
+      <td th:text="${prod.id}"></td>
+      <td th:text="${prod.name}"></td>
+      <td th:text="${prod.price}"></td>
+<!--      //fruit-->
+      <td th:if="${prod instanceof T(com.example.projekt.model.Fruit)}" th:text="${prod.color}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Fruit)}" th:text="${prod.amount}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Fruit)}" th:text="${prod.size}"></td>
+<!--      // meat-->
+      <td th:if="${prod instanceof T(com.example.projekt.model.Meat)}" th:text="${prod.weight}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Meat)}" th:text="${prod.legal}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Meat)}" th:text="${prod.fresh}"></td>
+<!--      // flower-->
+      <td th:if="${prod instanceof T(com.example.projekt.model.Flower)}" th:text="${prod.flowerColor}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Flower)}" th:text="${prod.avrageLength}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.Flower)}" th:text="${prod.legal}"></td>
+<!--      // bouquetOfFlowers-->
+      <td th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}" th:text="${prod.flowerColor}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}" th:text="${prod.amountOfBouquets}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}" th:text="${prod.greenery}"></td>
+      <td th:if="${prod instanceof T(com.example.projekt.model.BouquetOfFlowers)}" th:text="${prod.ribbon}"></td>
+    </tr>
+    </tr>
+  </table>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Targowisko</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+<header th:insert="_layout :: layout"></header>
+<section id="allSection">
+
+    <div style="display:flex;">
+        <h1>Product list | Sortuj po:</h1>
+        <form action="#" th:action="@{/filterBy}" method="POST">
+        <div class="dropdown" >
+            <button class="dropbtn" th:name="searchTerm" th:value="STALL" type="submit">Stall<span>&#8675;</span></button>
+                <div class="dropdown-content" style="left:0;">
+                    <button th:name="searchTerm" th:value="FRUIT" type="submit">Fruit</button>
+                    <button th:name="searchTerm" th:value="MEAT" type="submit">Meat</button>
+                    <button th:name="searchTerm" th:value="FLOWER" type="submit">Flower</button>
+                    <button th:name="searchTerm" th:value="BOUQUETOFFLOWERS" type="submit">BouquetOfFlowers</button>
+
+                </div>
+        </div>
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Cena straganu</th>
+            <th>Pojemność</th>
+            <th>Podatek %</th>
+            <th>Miesięczne koszty</th>
+            <th>Legalność</th>
+            <th colspan="20">Lista produktów</th>
+
+        </tr>
+        <tr th:each="stall : ${list}">
+            <td th:text="${stall.id}"></td>
+            <td th:text="${stall.priceOfStall}"></td>
+            <td th:text="${stall.capasity}"></td>
+            <td th:text="${stall.taxes}"></td>
+            <td th:text="${stall.dailyUtilityCosts}"></td>
+            <td th:text="${stall.isLegal}"></td>
+            <td th:each="product : ${stall.listOfProducts}">
+                <div th:if="${product instanceof T(com.example.projekt.model.Fruit)}">
+                    <p>id name price amount</p>
+                    <span th:text="${product.id}"></span>
+                    <span th:text="${product.name}"></span>
+                    <span th:text="${product.price}"></span>
+                    <span th:text="${product.amount}"></span>
+<!--                    <span th:text="${product.amount}"></span>-->
+<!--                    <span th:text="${product.size}"></span>-->
+                </div>
+                <div th:if="${product instanceof T(com.example.projekt.model.Flower)}">
+                    <p>id name price </p>
+                    <span th:text="${product.id}"></span>
+                    <span th:text="${product.name}"></span>
+                    <span th:text="${product.price}"></span>
+                </div>
+                <div th:if="${product instanceof T(com.example.projekt.model.BouquetOfFlowers)}">
+                    <p>id name price </p>
+                    <span th:text="${product.id}"></span>
+                    <span th:text="${product.name}"></span>
+                    <span th:text="${product.price}"></span>
+                </div>
+                <div th:if="${product instanceof T(com.example.projekt.model.Meat)}">
+                    <p>id name price isLegal</p>
+                    <span th:text="${product.id}"></span>
+                    <span th:text="${product.name}"></span>
+                    <span th:text="${product.price}"></span>
+                    <span th:text="${product.legal}"></span>
+                </div>
+<!--                <span>-->
+<!--                    <form th:action="@{/deleteProduct}">-->
+<!--                        <input type="hidden" th:name="id" th:value="${product.id}">-->
+<!--                        <input type="hidden" th:name="id2" th:value="${stall.id}">-->
+<!--                        <button class="deleteButton" type="submit">Delete</button>-->
+<!--                    </form>-->
+<!--                </span>-->
+
+            </td>
+
+            <!--
+             <td th:text="${prod.listOfProducts}"></td>
+ -->
+
+<!--            <td colspan="20">-->
+<!--            <form th:action="@{/deleteStall}">-->
+<!--                <input type="hidden" th:name="index" th:value="${stall.id}">-->
+<!--                <button class="deleteButton" type="submit">Delete</button>-->
+<!--            </form>-->
+<!--            </td>-->
+        </tr>
+
+        <div th:if="${not#lists.isEmpty(list)}">
+            <!--<tr th:each="prodlist : ${list.getProductById(1)}">
+                <td th:text="${prodlist.getColor()}"></td>
+                <td th:text="${prodlist.getAmount()}"></td>
+                <td th:text="${prodlist.getSize()}"></td>
+            </tr>-->
+        </div>
+    </table>
+</section>
+</body>
+</html>
