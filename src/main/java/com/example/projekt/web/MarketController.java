@@ -80,7 +80,7 @@ public class MarketController {
                 return "all";
             case "PRODUCT":
                 request.setAttribute("list", marketService.findProductById(listOFStalls, index));
-                return "showSingleTypeOfObject";
+                return "showOne";
         }
         return "all";
     }
@@ -249,7 +249,7 @@ public class MarketController {
             case "MEAT":
             case "FLOWER":
             case "BOUQUETOFFLOWERS":
-                model.addAttribute("list", marketService.findByInstace(listOFStalls, searchTerm));
+                model.addAttribute("list", marketService.findByInstance(listOFStalls, searchTerm));
                 model.addAttribute("instance", searchTerm);
                 return "showSingleTypeOfObject";
         }

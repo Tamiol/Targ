@@ -44,7 +44,7 @@ public class MarketServiceImpl implements MarketService {
     }
 
     @Override
-    public <T extends Product> List<Object> findByInstace(List<Stall> listOFStalls, String instance) {
+    public <T extends Product> List<Object> findByInstance(List<Stall> listOFStalls, String instance) {
         List<Object> newList = new ArrayList<>();
         List<List> pup;
 

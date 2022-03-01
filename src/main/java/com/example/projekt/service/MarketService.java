@@ -12,5 +12,5 @@ public interface MarketService {
     Product findProductById(List<Stall> listOFStalls, Long index);
     Long findIdOfStall(List<Stall> listOFStalls, Long index);
     <T extends Product> List<Object> findName(List<Stall> listOFStalls, String name);
-    <T extends Product> List<Object> findByInstace(List<Stall> listOFStalls, String instance);
+    <T extends Product> List<Object> findByInstance(List<Stall> listOFStalls, String instance);
 }

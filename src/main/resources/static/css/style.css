@@ -229,71 +229,6 @@ ul li a:hover {
 	text-decoration: none;
 }
 
-/* pola z wyborem lekcji T72-M1----------------------------------------*/
-.lessons {
-	text-align: center;
-	display: table;
-	min-height: calc(100vh - 110px - 110px);
-	width: 100%;
-}
-
-.lessons p {
-	text-align: center;
-	font-size: 25px;
-	font-family: 'Lato', Arial, sans-serif;
-	letter-spacing: 1px;
-	margin-block-end: 0px;
-	padding-top: 10px;
-}
-
-.lessons p a {
-	font-size: 25px;
-	font-family: 'Lato', Arial, sans-serif;
-	letter-spacing: 1px;
-	text-decoration: none;
-	color: black;
-}
-
-.lesson1 {
-	animation: appear 0.8s 0.2s both;
-}
-.lesson2 {
-	animation: appear 0.8s 0.4s both;
-}
-.lesson3 {
-	animation: appear 0.8s 0.6s both;
-}
-.lesson4 {
-	animation: appear 0.8s 0.8s both;
-}
-.lesson5 {
-	animation: appear 0.8s 1.0s both;
-}
-.lesson6 {
-	animation: appear 0.8s 1.2s both;
-}
-.lesson7 {
-	animation: appear 0.8s 1.4s both;
-}
-
-.lessons form {
-	padding: 20px;
-}
-
-.lessons input {
-	width: 100%;
-	padding: 15px;
-	font-size: 100%;
-	letter-spacing: 1px;
-	font-family: 'Montserrat', sans-serif;
-	border-radius: 25px;
-	transition: background-color, color, border-color;
-	transition-duration: 1s;
-}
-.lessons input:active, .lessons input:focus {
-	-moz-outline: none;
-	outline: none; /* CSS 3 */
-}
 /* footer -----------------------------------------------------*/
 footer {
 	display: flex;
@@ -339,33 +274,33 @@ footer {
 		overflow-x: hidden;
 	}
 
-	.nav-links {
-		position: absolute;
-		z-index: 1;
-		right: 0px;
-		height: 400px;
-		top: 80px;
-		background-color: #ce6026;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 50%;
-		transform: translateX(100%);
-		transition: transform 0.5s ease-in;
-	}
+	/*.nav-links {*/
+	/*	position: absolute;*/
+	/*	z-index: 1;*/
+	/*	right: 0px;*/
+	/*	height: 400px;*/
+	/*	top: 80px;*/
+	/*	background-color: #ce6026;*/
+	/*	display: flex;*/
+	/*	flex-direction: column;*/
+	/*	align-items: center;*/
+	/*	width: 50%;*/
+	/*	transform: translateX(100%);*/
+	/*	transition: transform 0.5s ease-in;*/
+	/*}*/
 
-	.nav-links li {
-		margin: 20px 0px 50px 0px;
-		opacity: 0;
-	}
+	/*.nav-links li {*/
+	/*	margin: 20px 0px 50px 0px;*/
+	/*	opacity: 0;*/
+	/*}*/
 
-	.nav-links a {
-		font-size: 25px;
-	}
+	/*.nav-links a {*/
+	/*	font-size: 25px;*/
+	/*}*/
 
-	.burger {
-		display: block;
-	}
+	/*.burger {*/
+	/*	display: block;*/
+	/*}*/
 
 	/* home page -----------------------------------------------------*/
 	ul li a {
@@ -440,23 +375,6 @@ button:active, button:focus, a:active, a:focus {
 }
 
 /*//////////////////////*/
-
-.deleteButton {
-	padding: 5px 10px;
-	background-color: #8E1600;
-	color: #fff;
-	border: 1px solid #8E1600;
-	font-size: 16px;
-	border-radius: 10px;
-	transition: background-color, border-color;
-	transition-duration: 0.3s;
-	cursor: pointer;
-}
-
-.deleteButton:hover {
-	background-color: #B53737;
-	border: 1px solid #B53737;
-}
 
 #allSection form {
 	display: flex;
