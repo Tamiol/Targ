@@ -100,7 +100,7 @@ public class MarketController {
 
     @PostMapping("/addStall")
     public String saveStall(@ModelAttribute("stall") Stall stall) {
-        listOFStalls.add(new Stall(stall.getPriceOfStall(), stall.getCapasity(), stall.getTaxes()));
+        listOFStalls.add(new Stall(stall.getPriceOfStall(), stall.getCapacity(), stall.getTaxes()));
         return "redirect:/";
     }
 

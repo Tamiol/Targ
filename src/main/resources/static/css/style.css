@@ -96,11 +96,33 @@ header ul li a {
 	transition-duration: 0.5s;
 }
 
-ul li a:hover {
+ul li a:hover,  nav button:hover{
 	background-color: #99AAEA;
 	border: 2px solid #99AAEA;
 	color: #fff;
 	cursor: pointer;
+}
+nav button{
+	text-decoration: none;
+	color: #FFFFFF;
+	padding: 8px 16px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	background-color: transparent;
+	border: 2px solid transparent;
+	border-radius: 5rem;
+	margin-left: 8px;
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color, color;
+	transition-duration: 0.5s;
+}
+
+nav input{
+	padding: 3px 6px;
+	border-radius: 5rem;
+	border: 2px solid transparent;
 }
 
 #addSection {
@@ -127,7 +149,7 @@ ul li a:hover {
 	transition: background-color, color, border-color;
 	transition-duration: 1s;
 	cursor: pointer;
-	
+
 	background-color: #FFF;
 	color: #47644f;
 	border: 2px solid #5f9b4f;
@@ -307,7 +329,7 @@ footer {
 		border: 3px solid transparent;
 		padding: 10px 15px;
 	}
-	
+
 	ul li a:hover {
 		color: #2c3e50;
 		text-shadow: 0px 0px 2px #232323;
@@ -475,7 +497,7 @@ button:active, button:focus, a:active, a:focus {
 	position: absolute;
 	right: 0;
 	background-color: #f9f9f9;
-	min-width: 160px;
+	min-width: 250px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }

@@ -54,11 +54,11 @@ public class Stall<T extends Product> implements LegalImpl{
         this.monthlyUtilityCosts = (double)priceOfStall * (double)taxes;
     }
 
-    public int getCapasity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapasity(int capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
         this.monthlyUtilityCosts = (double)priceOfStall * (double)taxes;
     }
